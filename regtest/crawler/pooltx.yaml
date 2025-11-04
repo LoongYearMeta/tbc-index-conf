@@ -1,7 +1,7 @@
 # TBC爬虫YAML配置文件
 CrawlerInfo:
   RecrawlCount: 10
-  CrawlerOffset: 135794
+  CrawlerOffset: 10
   CrawlerCount: 16
 
 CoinType: "TBC"
