@@ -8,7 +8,7 @@ CoinType: "TBC"
 
 Fullnode:
   URL: 
-    - "test:gcptest@127.0.0.1:8332""
+    - "test:gcptest@127.0.0.1:8332"
   ZMQURL: 
     - "tcp://127.0.0.1:28333"
   NETTYPE: "testnet3"
