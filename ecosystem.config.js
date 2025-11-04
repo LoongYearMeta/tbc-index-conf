@@ -107,7 +107,7 @@ module.exports = {
       {
         name: 'tbc-crawler-piggybank',
         script: './bin/tbc-crawler',
-        args: '-config ./conf/piggybank.yaml',
+        args: ['-config', './conf/piggybank.yaml'],
         cwd: '.',
         instances: 1,
         exec_mode: 'fork',
