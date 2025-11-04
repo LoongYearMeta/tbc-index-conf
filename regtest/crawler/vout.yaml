@@ -8,10 +8,10 @@ CoinType: "TBC"
 
 Fullnode:
   URL: 
-    - "tbc:tbc@172.31.40.152:8332"
+    - "test:test@127.0.0.1:8332"
   ZMQURL:
-    - "tcp://172.31.40.152:28333"
-  NETTYPE: "testnet3"
+    - "tcp://127.0.0.1:28333"
+  NETTYPE: "regtest"
 
 # 健康检查配置
 HealthCheck:
@@ -25,6 +25,6 @@ RedisDbPaths:
 Type: "vout_filter"
 
 LogConfig:
-  LogDir: "./logs/testnet3/vout.log"
+  LogDir: "./logs/regtest/vout.log"
   LogLevel: "INFO"
 

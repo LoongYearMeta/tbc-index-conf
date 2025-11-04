@@ -1,0 +1,45 @@
+# TBC爬虫YAML配置文件
+CrawlerInfo:
+  RecrawlCount: 10
+  CrawlerOffset: 135794
+  CrawlerCount: 16
+
+CoinType: "TBC"
+
+Fullnode:
+  URL: 
+    - "test:test@127.0.0.1:8332"
+  ZMQURL: 
+    - "tcp://127.0.0.1:28333"
+  NETTYPE: "regtest"
+
+# 健康检查配置
+HealthCheck:
+  ReportURL: "http://127.0.0.1:8081/tbc/health/heartbeat"
+  ReportInterval: 15
+
+
+DbPaths:
+# 交易信息
+  piecewise_rawtx: "mongodb://admin:metasoftmongodb@127.0.0.1:27017"
+  piecewise_rawtx_hash: "mongodb://admin:metasoftmongodb@127.0.0.1:27017"
+  piecewise_rawtx_hash_pre: "mongodb://admin:metasoftmongodb@127.0.0.1:27017"
+
+DbIndexs:
+  # PiecewiseRawtx
+  piecewise_rawtx:
+    - "dataid"
+  piecewise_rawtx_hash:
+    - "height"
+  piecewise_rawtx_hash_pre:
+    - "height"
+
+RedisDbPaths:
+  vout: "redis://127.0.0.1:6379/13"
+
+Type: "piecewise_rawtx_filter"
+
+LogConfig:
+  LogDir: "./logs/regtest/poecewise-rawtx.log"
+  LogLevel: "INFO"
+

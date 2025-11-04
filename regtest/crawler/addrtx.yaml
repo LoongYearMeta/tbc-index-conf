@@ -1,0 +1,53 @@
+# TBC爬虫YAML配置文件
+CrawlerInfo:
+  RecrawlCount: 10
+  CrawlerOffset: 135794 
+  CrawlerCount: 16
+
+CoinType: "TBC"
+Fullnode:
+  URL: 
+    - "test:test@127.0.0.1:8332"
+  ZMQURL: 
+    - "tcp://127.0.0.1:28333"
+  NETTYPE: "regtest"
+
+# 健康检查配置
+HealthCheck:
+  ReportURL: "http://127.0.0.1:8081/tbc/health/heartbeat"
+  ReportInterval: 15
+
+DbPaths:
+# 地址交易信息
+  addr_tx_hash: "mongodb://admin:metasoftmongodb@127.0.0.1:27017"
+  addr_tx_hash_pre: "mongodb://admin:metasoftmongodb@127.0.0.1:27017"
+  addr_tx_block_info: "mongodb://admin:metasoftmongodb@127.0.0.1:27017"
+  addr_tx: "mongodb://admin:metasoftmongodb@127.0.0.1:27017"
+  tx: "mongodb://admin:metasoftmongodb@127.0.0.1:27017"
+  error_tx: "mongodb://admin:metasoftmongodb@127.0.0.1:27017"
+  unconfirm_addr_tx: "mongodb://admin:metasoftmongodb@127.0.0.1:27017"
+
+DbIndexs:
+  # Addr  addr_tx:
+  addr_tx:
+    - "addr"
+    - "scriptpubkeyhash"
+  unconfirm_addr_tx:
+    - "addr"
+    - "scriptpubkeyhash"
+  tx:
+    - "hash"
+    - "height"
+  addr_tx_hash:
+    - "height"
+  addr_tx_hash_pre:
+    - "height"
+
+RedisDbPaths:
+  vout: "redis://127.0.0.1:6379/13"
+
+Type: "addrtx_filter"
+
+LogConfig:
+  LogDir: "./logs/regtest/addrtx.log"
+  LogLevel: "INFO"
