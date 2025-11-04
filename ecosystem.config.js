@@ -1,0 +1,121 @@
+module.exports = {
+    apps: [
+      {
+        name: 'tbc-crawler-addrtx',
+        script: './bin/tbc-crawler',
+        args: ['-config', './conf/addrtx.yaml'],
+        cwd: '.',
+        instances: 1,
+        exec_mode: 'fork',
+        autorestart: false,
+        watch: false,
+        out_file: '/dev/null',
+        error_file: '/dev/null',
+        time: false
+      },
+      {
+        name: 'tbc-crawler-block-header',
+        script: './bin/tbc-crawler',
+        args: ['-config', './conf/block_header.yaml'],
+        cwd: '.',
+        instances: 1,
+        exec_mode: 'fork',
+        autorestart: false,
+        watch: false,
+        out_file: '/dev/null',
+        error_file: '/dev/null',
+        time: false
+      },
+      {
+        name: 'tbc-crawler-piecewise-rawtx',
+        script: './bin/tbc-crawler',
+        args: ['-config', './conf/piecewise_rawtx.yaml'],
+        cwd: '.',
+        instances: 1,
+        exec_mode: 'fork',
+        autorestart: false,
+        watch: false,
+        out_file: '/dev/null',
+        error_file: '/dev/null',
+        time: false
+      },
+      {
+        name: 'tbc-crawler-nfttx',
+        script: './bin/tbc-crawler',
+        args: ['-config', './conf/nfttx.yaml'],
+        cwd: '.',
+        instances: 1,
+        exec_mode: 'fork',
+        autorestart: false,
+        watch: false,
+        out_file: '/dev/null',
+        error_file: '/dev/null',
+        time: false
+      },
+      {
+        name: 'tbc-crawler-tokentx',
+        script: './bin/tbc-crawler',
+        args: ['-config', './conf/tokentx.yaml'],
+        cwd: '.',
+        instances: 1,
+        exec_mode: 'fork',
+        autorestart: false,
+        watch: false,
+        out_file: '/dev/null',
+        error_file: '/dev/null',
+        time: false
+      },
+      {
+        name: 'tbc-crawler-pooltx',
+        script: './bin/tbc-crawler',
+        args: ['-config', './conf/pooltx.yaml'],
+        cwd: '.',
+        instances: 1,
+        exec_mode: 'fork',
+        autorestart: false,
+        watch: false,
+        out_file: '/dev/null',
+        error_file: '/dev/null',
+        time: false
+      },
+      {
+        name: 'tbc-crawler-multisigtx',
+        script: './bin/tbc-crawler',
+        args: ['-config', './conf/multisig.yaml'],
+        cwd: '.',
+        instances: 1,
+        exec_mode: 'fork',
+        autorestart: false,
+        watch: false,
+        out_file: '/dev/null',
+        error_file: '/dev/null',
+        time: false
+      },
+      {
+        name: 'tbc-crawler-vout',
+        script: './bin/tbc-crawler',
+        args: ['-config', './conf/vout.yaml'],
+        cwd: '.',
+        instances: 1,
+        exec_mode: 'fork',
+        autorestart: false,
+        watch: false,
+        out_file: '/dev/null',
+        error_file: '/dev/null',
+        time: false
+      },
+      {
+        name: 'tbc-crawler-piggybank',
+        script: './bin/tbc-crawler',
+        args: '-config ./conf/piggybank.yaml',
+        cwd: '.',
+        instances: 1,
+        exec_mode: 'fork',
+        autorestart: false,
+        watch: false,
+        out_file: '/dev/null',
+        error_file: '/dev/null',
+        time: false
+      }
+    ]
+  };
