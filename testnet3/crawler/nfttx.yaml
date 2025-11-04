@@ -60,5 +60,4 @@ S3Config:
   Region: "ap-southeast-1"
   AccessKey: "${AWS_ACCESS_KEY}"
   SecretKey: "${AWS_SECRET_KEY}"
-  # BucketName: "tbc-node-test-local"
   BucketName: "tbc-node-test"
