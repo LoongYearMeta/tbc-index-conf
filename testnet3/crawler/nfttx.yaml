@@ -33,10 +33,14 @@ DbIndexs:
     - "addr"
     - "value.nftid"
     - "value.collectionid"
+    - "value.contracthash"
+    - "scriptpubkeyhash"
   unconfirm_nft_tx:
     - "addr"
     - "value.nftid"
     - "value.collectionid"
+    - "value.contracthash"
+    - "scriptpubkeyhash"
   nft_tx_block_info:
     - "hash"
   nft_tx_record:

@@ -33,9 +33,17 @@ DbIndexs:
   addr_tx:
     - "addr"
     - "scriptpubkeyhash"
+    - "txid"
+    - "index"
+    - "prehash"
+    - "preindex"
   unconfirm_addr_tx:
     - "addr"
     - "scriptpubkeyhash"
+    - "txid"
+    - "index"
+    - "prehash"
+    - "preindex"
   tx:
     - "hash"
     - "height"
