@@ -35,10 +35,12 @@ DbIndexs:
     - "value.poolid"
     - "value.poolhash"
     - "value.tokenpairid"
+    - "value.poolhash:1%height:-1"
   unconfirm_pool_info_tx:
     - "value.poolid"
     - "value.poolhash"
     - "value.tokenpairid"
+    - "value.poolhash:1%height:-1"
   pool_tx_block_info:
     - "hash"
   ft_lp_info_tx:
