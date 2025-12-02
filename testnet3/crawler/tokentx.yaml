@@ -54,6 +54,7 @@ DbIndexs:
     - "hash"
   ft_tx:
     - "hash"
+    - "height:1%hash:1"
   token_tx_hash:
     - "height"
   token_tx_hash_pre:
