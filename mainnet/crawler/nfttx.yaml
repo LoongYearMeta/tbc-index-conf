@@ -46,6 +46,7 @@ DbIndexs:
     - "hash"
   nft_tx_record:
     - "hash"
+    - "height:1%hash:1"
   nft_tx_hash:
     - "height"
   nft_tx_hash_pre:

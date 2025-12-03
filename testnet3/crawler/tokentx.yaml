@@ -1,7 +1,7 @@
 # TBC爬虫YAML配置文件
 CrawlerInfo:
   RecrawlCount: 10
-  CrawlerOffset: 135794
+  CrawlerOffset: 10
   CrawlerCount: 16
 
 CoinType: "TBC"
@@ -38,6 +38,8 @@ DbIndexs:
     - "prehash"
     - "preindex"
     - "txid"
+    - "value.contracthash:1%value.combinescript:1%height:-1"
+    - "value.contracthash:1%height:-1"
   unconfirm_token_tx:
     - "addr"
     - "value.contractid"
@@ -46,10 +48,13 @@ DbIndexs:
     - "prehash"
     - "preindex"
     - "txid"
+    - "value.contracthash:1%value.combinescript:1%height:-1"
+    - "value.contracthash:1%height:-1"
   token_tx_block_info:
     - "hash"
   ft_tx:
     - "hash"
+    - "height:1%hash:1"
   token_tx_hash:
     - "height"
   token_tx_hash_pre:
