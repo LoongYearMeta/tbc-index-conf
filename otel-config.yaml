@@ -1,0 +1,64 @@
+receivers:
+  prometheus:
+    config:
+      scrape_configs:
+        - job_name: 'otel-collector'
+          scrape_interval: 10s
+          static_configs:
+            - targets: ['0.0.0.0:8888']
+        - job_name: 'tbc-crawler'
+          scrape_interval: 15s
+          static_configs:
+            - targets: ['localhost:19000']
+              labels:
+                filter: 'tbc'
+            - targets: ['localhost:19001']
+              labels:
+                filter: 'piecewise_rawtx_filter'
+            - targets: ['localhost:19002']
+              labels:
+                filter: 'addrtx_filter'
+            - targets: ['localhost:19003']
+              labels:
+                filter: 'tokentx_filter'
+            - targets: ['localhost:19004']
+              labels:
+                filter: 'pooltx_filter'
+            - targets: ['localhost:19005']
+              labels:
+                filter: 'nfttx_filter'
+            - targets: ['localhost:19006']
+              labels:
+                filter: 'multisigtx_filter'
+            - targets: ['localhost:19007']
+              labels:
+                filter: 'vout_filter'
+            - targets: ['localhost:19008']
+              labels:
+                filter: 'piggybanktx_filter'
+          metrics_path: /metrics
+
+processors:
+  batch:
+
+exporters:
+  debug:
+    verbosity: detailed
+  prometheus:
+    endpoint: "0.0.0.0:19090"
+    namespace: "otel"
+    const_labels:
+      service: "tbc-crawler"
+  
+extensions:
+  health_check:
+  zpages:
+    endpoint: "0.0.0.0:55679"
+
+service:
+  extensions: [health_check, zpages]
+  pipelines:
+    metrics:
+      receivers: [prometheus]
+      processors: [batch]
+      exporters: [prometheus]
